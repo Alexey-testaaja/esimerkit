@@ -1,2 +1,1 @@
-# esimerkit
-Koodi-esimerkit
+
