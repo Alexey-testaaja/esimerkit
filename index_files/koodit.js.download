@@ -1,0 +1,44 @@
+jQuery(document).ready(function(){
+	/* hide menu, visible if in mobile, if no js stays open */
+	jQuery('#menu-paavalikko').addClass('menu-hidden');
+	jQuery('.mob-navi-btn').click(function(el){
+		if(jQuery('#menu-paavalikko').hasClass('menu-hidden')){
+			jQuery('#menu-paavalikko').removeClass('menu-hidden');
+		} else {
+			jQuery('#menu-paavalikko').addClass('menu-hidden');
+		}
+	});
+	jQuery('#sarjakuva-muuttopaiva').find('img').attr('aria-describedby', 'sarjakuva_muuttopaiva_kuvausteksti');
+  	jQuery('#sarjakuva-yo').find('img').attr('aria-describedby', 'sarjakuva_yo_kuvausteksti');
+  	
+  	
+/*	 var checkboxs = jQuery('input[type=checkbox]');
+  
+  checkboxs.each(function(){
+    jQuery(this).wrap('<div class="customCheckbox"></div>');
+    jQuery(this).before('<span>&#10004;</span>');
+  });
+  
+  checkboxs.change(function(){
+    if(jQuery(this).is(':checked')){
+     jQuery(this).parent().addClass('customCheckboxChecked');
+    } else {
+     jQuery(this).parent().removeClass('customCheckboxChecked');
+    }
+  });*/
+  
+  jQuery('ol').each(function(el, ind){
+  	
+  	var str = jQuery(this).attr('start');
+  	console.log('attr start' + str );
+  	if(str != '' && str != undefined){
+  		jQuery(this).addClass("start"+str);
+  	}
+  	
+  });
+  jQuery('#videokuva').on('click', function(el){
+  	jQuery('#videocontent').html('<div class="embed-responsive embed-responsive-16by9"><video id="mhjvideo" preload="auto" autoplay="autoplay" controls="controls" width="1110px"><source src="//www.mouhijärvenmaisemakylät.fi/video/Maisemakylien-video.mp4" type="video/mp4"><source src="//www.mouhijärvenmaisemakylät.fi/video/Maisemakylien-video.webm" type="video/webm"><source src="//www.mouhijärvenmaisemakylät.fi/video/Maisemakylien-video.ogv" type="video/ogg"></video></div>');
+  });
+  
+
+})
